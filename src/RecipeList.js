@@ -13,7 +13,6 @@ class RecipeList extends Component {
             return (<Recipe key={recipe.id} info={recipe} /> )
         })
 
-
         return ( <div>
                     {recipes}
                 </div>

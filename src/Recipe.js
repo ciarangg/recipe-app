@@ -1,4 +1,5 @@
 import React, { Component } from 'react';
+import Ingredients from './Ingredients';
 
 class Recipe extends Component {
     render() {
@@ -6,8 +7,8 @@ class Recipe extends Component {
         let {info} = this.props
         let ingredients = info.ingredients
 
-        const ingredientsList = ingredients.map((ingredientList) => {
-        return (<li> {ingredientList} </li> )
+        const ingredientsList = ingredients.map((ingredient, i) => {
+        return (<Ingredients key={ingredient[i]} ingredient={ingredient}/> )
             })
 
         return ( <div>

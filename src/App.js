@@ -10,8 +10,6 @@ import json from './recipelist.json'
 
 class App extends Component {
   render() {
-
-    console.log(json)
     return (
       <div className="App">
         <RecipeList key={json.id} theList={json} />
