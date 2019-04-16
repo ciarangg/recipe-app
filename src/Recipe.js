@@ -5,10 +5,9 @@ class Recipe extends Component {
 
         let {info} = this.props
         let ingredients = info.ingredients
-        console.log(ingredients)
 
         const ingredientsList = ingredients.map((ingredientList) => {
-            return (<li> {ingredientList} </li> )
+        return (<li> {ingredientList} </li> )
             })
 
         return ( <div>

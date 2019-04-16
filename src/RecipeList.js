@@ -8,7 +8,6 @@ class RecipeList extends Component {
     render() {
 
         let {theList} = this.props
-        console.log(theList)
 
         const recipes = theList.map((recipe) => {
             return (<Recipe key={recipe.id} info={recipe} /> )
@@ -23,3 +22,4 @@ class RecipeList extends Component {
 }
 
 export default RecipeList
+
