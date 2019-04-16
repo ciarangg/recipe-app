@@ -4,16 +4,15 @@ class Recipe extends Component {
     render() {
 
         let {info} = this.props
-        console.log(info)
+        let ingredients = info.ingredients
+        console.log(ingredients)
 
         return ( <div>
                     <h1> {info.title} </h1>
-                    <img src={info.picture} />
+                    <img src={info.picture} alt={info.title} height="350" width="350" />
                     <p> <b>Ingredients:</b> {info.ingredients} </p>
                     <ul>
-                        <li>ing</li>
-                        <li>ing</li>
-                        <li>ing</li>
+                        
                     </ul>
                     <p> <b> Recipe: </b> {info.instructions} </p>
 
