@@ -3,6 +3,10 @@ import React, { Component } from 'react';
 class Recipe extends Component {
     render() {
 
+        
+        // let {json} = this.props
+        // console.log(json)
+
         return ( <div>
                     <h1> title </h1>
                     <p>pic</p>
