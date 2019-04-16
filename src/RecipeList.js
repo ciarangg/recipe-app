@@ -1,13 +1,17 @@
 import React, { Component } from 'react';
 import Recipe from './Recipe';
-import json from './recipelist.json'
+
 
 class RecipeList extends Component {
 
+
     render() {
 
-    const recipes = json.map((recipe) => {
-        return (<Recipe key={recipe.id} info={recipe} /> )
+        let {theList} = this.props
+        console.log(theList)
+
+        const recipes = theList.map((recipe) => {
+            return (<Recipe key={recipe.id} info={recipe} /> )
         })
 
 
