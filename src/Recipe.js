@@ -8,7 +8,7 @@ class Recipe extends Component {
 
         return ( <div>
                     <h1> {info.title} </h1>
-                    <p>pic</p>
+                    <img src={info.picture} />
                     <p> <b>Ingredients:</b> {info.ingredients} </p>
                     <ul>
                         <li>ing</li>
