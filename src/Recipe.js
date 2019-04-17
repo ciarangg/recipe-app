@@ -12,12 +12,12 @@ class Recipe extends Component {
             })
 
         return ( <div>
-                    <h1> {info.title} </h1>
+                    <h2>{info.title} </h2>
                     <img src={info.picture} alt={info.title} height="350" width="350" />
-                    <p> <b>Ingredients:</b> {info.ingredients} </p>
-                    <ul>
-                        {ingredientsList}
-                    </ul>
+                    <dl>
+                            <dt><b>Ingredients:</b></dt>
+                            {ingredientsList}
+                    </dl>
                     <p> <b> Recipe: </b> {info.instructions} </p>
 
                 </div>
