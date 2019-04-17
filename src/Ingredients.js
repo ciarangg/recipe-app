@@ -4,9 +4,10 @@ class Recipe extends Component {
     render() {
         let {ingredient} = this.props
 
-        return ( <li>
+        return ( 
+                <dd>
                     {ingredient}
-                </li>
+                </dd>
         );
     }
 }
