@@ -6,10 +6,10 @@ class RecipeForm extends Component {
 
         return ( 
             <form className="recipe-form">
-                <label>Title:</label>
+                <label>Title: </label>
                 <input type="text" name="title" value="Mac and Cheese" />
                 <br />
-                <label>Instructions:</label>
+                <label>Instructions: </label>
                 <input type="text" value="Boil macaroni..." />
             </form>
         );

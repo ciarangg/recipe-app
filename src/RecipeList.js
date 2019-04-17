@@ -17,7 +17,10 @@ class RecipeList extends Component {
         })
 
         return ( <div>
+                <h1><u>Our Recipes</u></h1>
                     {recipes}
+                    <br />
+                    <h1><u>Post Your Own Recipe</u></h1>
                     <RecipeForm />
                 </div>
         );
