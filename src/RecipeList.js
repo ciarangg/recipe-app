@@ -1,5 +1,6 @@
 import React, { Component } from 'react';
 import Recipe from './Recipe';
+import RecipeForm from './RecipeForm';
 
 
 class RecipeList extends Component {
@@ -17,6 +18,7 @@ class RecipeList extends Component {
 
         return ( <div>
                     {recipes}
+                    <RecipeForm />
                 </div>
         );
     }
