@@ -9,7 +9,16 @@ import json from './recipelist.json'
 
 
 class App extends Component {
+
+  constructor(props) {
+    super(props);
+    this.state = {recipeList: json};
+  }
+
   render() {
+
+    console.log(this.state)
+      
     return (
       <div className="App">
         <RecipeList key={json.id} theList={json} />
