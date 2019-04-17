@@ -9,6 +9,8 @@ class RecipeList extends Component {
 
         let {theList} = this.props
 
+        console.log(theList)
+
         const recipes = theList.map((recipe) => {
             return (<Recipe key={recipe.id} info={recipe} /> )
         })

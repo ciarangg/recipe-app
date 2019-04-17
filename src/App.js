@@ -9,10 +9,19 @@ import json from './recipelist.json'
 
 
 class App extends Component {
+
+  constructor(props) {
+    super(props);
+    this.state = {theList: json};
+  }
+
   render() {
+
+    let {theList} = this.state
+      
     return (
       <div className="App">
-        <RecipeList key={json.id} theList={json} />
+        <RecipeList key={json.id} theList={theList} />
       </div>
     );
   }
