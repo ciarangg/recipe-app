@@ -1,6 +1,5 @@
 import React, { Component } from 'react';
 import Recipe from './Recipe';
-import RecipeForm from './RecipeForm';
 
 
 class RecipeList extends Component {
@@ -9,8 +8,6 @@ class RecipeList extends Component {
     render() {
 
         let {theList} = this.props
-
-        console.log(theList)
 
         const recipes = theList.map((recipe) => {
             return (<Recipe key={recipe.title} info={recipe} /> )
@@ -21,7 +18,6 @@ class RecipeList extends Component {
                     {recipes}
                     <br />
                     <h1><u>Post Your Own Recipe</u></h1>
-                    <RecipeForm />
                 </div>
         );
     }
