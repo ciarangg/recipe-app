@@ -16,6 +16,7 @@ class RecipeForm extends Component {
         }
     }
 
+
     handleChange = (event) => {
 
         let daNewRecipe = this.state.newRecipe
@@ -32,7 +33,6 @@ class RecipeForm extends Component {
         this.setState({newRecipe: daNewRecipe})
     }
 
-    
 
     handleSubmit = (event) => {
         event.preventDefault();
@@ -42,14 +42,16 @@ class RecipeForm extends Component {
 
     render() {
 
+        let {newRecipe} = this.state
+
 
         return (
             <form className="recipe-form" onSubmit={this.handleSubmit}>
                 <label><b>Title:</b> </label>
-                <input type="text" name="title"  onChange={this .handleChange} />
+                <input type="text" name="title"  onChange={this.handleChange} />
                 <br />
                 <label><b>Picture</b> (Optional, must be url) </label>
-                <input type="text" name="picture"  onChange={this .handleChange} />
+                <input type="text" name="picture"  onChange={this.handleChange} />
                 <br />
                 <label><b>Ingredients:</b>  (A space between each ingredient) </label>
                 <input type="text" name="ingredients"  onChange={this.handleChange} />
