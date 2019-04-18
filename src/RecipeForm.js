@@ -1,13 +1,6 @@
 import React, { Component } from 'react';
 
 
-// let theNewRecipe = {
-//     title: "",
-//     picture: "https://upload.wikimedia.org/wikipedia/commons/6/64/Poster_not_available.jpg",
-//     instructions: "",
-//     ingredients: []
-// }
-
 class RecipeForm extends Component {
 
 
@@ -23,36 +16,23 @@ class RecipeForm extends Component {
         }
     }
 
+
     handleChange = (event) => {
 
         let daNewRecipe = this.state.newRecipe
 
-        //daNewRecipe[event.target.name] = event.target.value
-
-        if (event.target.name === "title") {
-            console.log("blerp")
-            daNewRecipe.title = event.target.value
-        }
-
-        if (event.target.name === "instructions") {
-            daNewRecipe.instructions = event.target.value
-        }
-
         if (event.target.name === "ingredients") {
-            daNewRecipe.ingredients = [event.target.value]
+            let ingredientArray = event.target.value.split(" ");
+            daNewRecipe.ingredients = ingredientArray
         }
 
-        console.log(daNewRecipe)
+        else {
+            daNewRecipe[event.target.name] = event.target.value
+        }
 
         this.setState({newRecipe: daNewRecipe})
-
-        //console.log(this.state.newRecipe)
-
-
-   
     }
 
-    
 
     handleSubmit = (event) => {
         event.preventDefault();
@@ -62,33 +42,21 @@ class RecipeForm extends Component {
 
     render() {
 
-        // let someAhbject = {
-        //     title: "dvwd",
-        //     picture: "https://upload.wikimedia.org/wikipedia/commons/6/64/Poster_not_available.jpg",
-        //     instructions: "dsvs",
-        //     ingredients: ["aha", "farts"]
-        // }
-
-        // let {postRecipe} = this.props
-
-        // console.log(postRecipe)
-
-        // for(let i=0; i < 1; i++ ) {
-        //     postRecipe(someAhbject)
-        // }
-       
+        let {newRecipe} = this.state
 
 
-        
         return (
             <form className="recipe-form" onSubmit={this.handleSubmit}>
-                <label>Title: </label>
-                <input type="text" name="title"  onChange={this .handleChange} />
+                <label><b>Title:</b> </label>
+                <input type="text" name="title"  onChange={this.handleChange} />
                 <br />
-                <label>Ingredients: </label>
+                <label><b>Picture</b> (Optional, must be url) </label>
+                <input type="text" name="picture"  onChange={this.handleChange} />
+                <br />
+                <label><b>Ingredients:</b>  (A space between each ingredient) </label>
                 <input type="text" name="ingredients"  onChange={this.handleChange} />
                 <br />
-                <label>Instructions: </label>
+                <label><b>Instructions:</b> </label>
                 <input type="text" name="instructions"  onChange={this.handleChange} />
                 <br />
                 <input type="submit" name="submit" value="Submit" onChange={this.handleChange} />

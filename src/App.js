@@ -27,7 +27,6 @@ class App extends Component {
 
     let {theList} = this.state
 
-    //console.log(theList)
       
     return (
       <div className="App">
