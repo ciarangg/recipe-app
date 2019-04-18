@@ -1,13 +1,6 @@
 import React, { Component } from 'react';
 
 
-// let theNewRecipe = {
-//     title: "",
-//     picture: "https://upload.wikimedia.org/wikipedia/commons/6/64/Poster_not_available.jpg",
-//     instructions: "",
-//     ingredients: []
-// }
-
 class RecipeForm extends Component {
 
 
@@ -27,15 +20,13 @@ class RecipeForm extends Component {
 
         let daNewRecipe = this.state.newRecipe
 
-
-        if (event.target.name === "title" || event.target.name === "instructions") {
-            daNewRecipe[event.target.name] = event.target.value
-        }
-
         if (event.target.name === "ingredients") {
             let ingredientArray = event.target.value.split(" ");
-
             daNewRecipe.ingredients = ingredientArray
+        }
+
+        else {
+            daNewRecipe[event.target.name] = event.target.value
         }
 
         this.setState({newRecipe: daNewRecipe})
@@ -54,13 +45,16 @@ class RecipeForm extends Component {
 
         return (
             <form className="recipe-form" onSubmit={this.handleSubmit}>
-                <label>Title: </label>
+                <label><b>Title:</b> </label>
                 <input type="text" name="title"  onChange={this .handleChange} />
                 <br />
-                <label>Ingredients: </label>
+                <label><b>Picture</b> (Optional, must be url) </label>
+                <input type="text" name="picture"  onChange={this .handleChange} />
+                <br />
+                <label><b>Ingredients:</b>  (A space between each ingredient) </label>
                 <input type="text" name="ingredients"  onChange={this.handleChange} />
                 <br />
-                <label>Instructions: </label>
+                <label><b>Instructions:</b> </label>
                 <input type="text" name="instructions"  onChange={this.handleChange} />
                 <br />
                 <input type="submit" name="submit" value="Submit" onChange={this.handleChange} />
