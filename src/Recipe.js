@@ -7,7 +7,7 @@ class Recipe extends Component {
         let {info} = this.props
         let ingredients = info.ingredients
 
-        const ingredientsList = ingredients.map((ingredient, i) => {
+        let ingredientsList = ingredients.map((ingredient, i) => {
         return (<Ingredients key={ingredient[i]} ingredient={ingredient}/> )
             })
 

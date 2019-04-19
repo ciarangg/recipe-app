@@ -1,5 +1,4 @@
 import React, { Component } from 'react';
-import logo from './logo.svg';
 import './App.css';
 import RecipeList from './RecipeList';
 import json from './recipelist.json'
@@ -12,7 +11,18 @@ class App extends Component {
 
   constructor(props) {
     super(props);
-    this.state = {theList: json};
+    this.state = {theList: []};
+  }
+
+
+  componentDidMount() {
+    this.getRecipes();
+  }
+
+  getRecipes = () => {
+    return fetch('./recipelist.json')
+      .then(response => response.json())
+      .then(theList => this.setState({theList}))
   }
 
 
@@ -26,8 +36,7 @@ class App extends Component {
   render() {
 
     let {theList} = this.state
-
-      
+    
     return (
       <div className="App">
         <RecipeList key={json.id} theList={theList} />
