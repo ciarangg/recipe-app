@@ -17,6 +17,7 @@ class RecipeForm extends Component {
     }
 
 
+
     handleChange = (event) => {
 
         let daNewRecipe = this.state.newRecipe
@@ -35,14 +36,18 @@ class RecipeForm extends Component {
 
 
     handleSubmit = (event) => {
+        const CONSTANTRECIPE = this.state.newRecipe
         event.preventDefault();
         let {postRecipe} = this.props
-        postRecipe(this.state.newRecipe)
+        
+        postRecipe(CONSTANTRECIPE)
     }
 
     render() {
 
         let {newRecipe} = this.state
+
+
 
 
         return (
