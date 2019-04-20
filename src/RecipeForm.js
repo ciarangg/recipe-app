@@ -1,19 +1,19 @@
 import React, { Component } from 'react';
 
+const blankRecipe = {
+    title: "",
+    picture: "https://upload.wikimedia.org/wikipedia/commons/6/64/Poster_not_available.jpg",
+    instructions: "",
+    ingredients: []
+}
+
 
 class RecipeForm extends Component {
 
 
     constructor(props){
         super(props)
-        this.state = {
-            newRecipe: {
-                title: "",
-                picture: "https://upload.wikimedia.org/wikipedia/commons/6/64/Poster_not_available.jpg",
-                instructions: "",
-                ingredients: []
-            }
-        }
+        this.state = {newRecipe: {... blankRecipe}}
     }
 
 
@@ -35,13 +35,15 @@ class RecipeForm extends Component {
     }
 
 
-    handleSubmit = (event) => {
-        const CONSTANTRECIPE = this.state.newRecipe
-        event.preventDefault();
-        let {postRecipe} = this.props
-        
-        postRecipe(CONSTANTRECIPE)
-    }
+        handleSubmit = (event) => {
+            event.preventDefault();
+            
+            const CONSTANTRECIPE = this.state.newRecipe
+            let {postRecipe} = this.props
+    
+            postRecipe(CONSTANTRECIPE)
+            this.setState({newRecipe: {... blankRecipe}})
+        }
 
     render() {
 

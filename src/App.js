@@ -1,7 +1,6 @@
 import React, { Component } from 'react';
 import './App.css';
 import RecipeList from './RecipeList';
-import json from './recipelist.json';
 import RecipeForm from './RecipeForm';
 
 
@@ -20,23 +19,10 @@ class App extends Component {
   }
 
   getRecipes = () => {
-    this.setState({theList: json})
+    return fetch('./recipelist.json')
+      .then(response => response.json())
+      .then(theList => this.setState({theList}))
   }
-
-  // getRecipes = () => {
-  //   return fetch('./recipelist.json') 
-  //     .then(response => console.log(response)
-  //     .then(response => response.json())
-  // }
-
-  // getRecipes = () => {
-  //   return fetch('../public/recipelist.json')
-  //     .then(response => console.log(response))
-  //     .then(response => response.json())
-  //     //.then(jobs => this.setState({jobs}))
-  // }
-
-
 
 
   postRecipe = (recipe) => {
@@ -48,10 +34,12 @@ class App extends Component {
   render() {
 
     let {theList} = this.state
+
+    //console.log(theList)
     
     return (
       <div className="App">
-        <RecipeList key={json.id} theList={theList} />
+        <RecipeList key={theList.id} theList={theList} />
         <RecipeForm postRecipe={this.postRecipe} />
       </div>
     );
