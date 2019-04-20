@@ -1,7 +1,7 @@
 import React, { Component } from 'react';
 import './App.css';
 import RecipeList from './RecipeList';
-import json from './recipelist.json'
+import json from './recipelist.json';
 import RecipeForm from './RecipeForm';
 
 
@@ -20,10 +20,22 @@ class App extends Component {
   }
 
   getRecipes = () => {
-    return fetch('./recipelist.json')
-      .then(response => response.json())
-      .then(theList => this.setState({theList}))
+    this.setState({theList: json})
   }
+
+  // getRecipes = () => {
+  //   return fetch('./recipelist.json') 
+  //     .then(response => console.log(response)
+  //     .then(response => response.json())
+  // }
+
+  // getRecipes = () => {
+  //   return fetch('../public/recipelist.json')
+  //     .then(response => console.log(response))
+  //     .then(response => response.json())
+  //     //.then(jobs => this.setState({jobs}))
+  // }
+
 
 
 

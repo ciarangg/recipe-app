@@ -1,17 +1,14 @@
-[
-    {
+[{
         "title": "Spaghetti",
         "picture": "https://www.cookingclassy.com/wp-content/uploads/2018/01/instant-pot-spaghetti-12-500x500.jpg",
         "instructions": "Open jar of Spaghetti Sauce. Bring to simmer. Boil water. Cook pasta until done. Combine pasta and sauce.",
         "ingredients": ["pasta", "8 cups of water", "1 jar of sauce"]
-    },
-    {
+    },{
         "title": "Milkshake",
         "picture": "https://i1.wp.com/www.unicornsinthekitchen.com/wp-content/uploads/2018/06/Classic-Vanilla-Milkshake-2-700px.jpg?fit=700%2C987&ssl=1",
         "instructions": "Combine ice cream and milk. Blend until creamy.",
         "ingredients": ["2 scoops of ice cream", "8 ounces of milk"]
-    },
-    {
+    },{
         "title": "Avocado Toast",
         "picture": "https://cookieandkate.com/images/2012/04/avocado-toast-variations.jpg",
         "instructions": "Toast bread. Slice avocado and spread on bread. Add salt, oil and pepper to taste.",
@@ -22,6 +19,4 @@
         "picture": "https://images.britcdn.com/wp-content/uploads/2014/05/Lucky-Charms1.jpg",
         "instructions": "Poor cereal in bowl. Poor milk in bowl!",
         "ingredients": ["cereal", "milk"]
-    }
-
-]
+}]
