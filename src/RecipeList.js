@@ -4,17 +4,19 @@ import Recipe from './Recipe';
 
 class RecipeList extends Component {
 
-
+    handleDelete = (event) => {
+        event.preventDefault();
+        let {deleteRecipe} = this.props
+        deleteRecipe(event.target.id)
+    }
 
 
     render() {
 
-        let {onDelete} = this.props
-
         let {theList} = this.props
 
         let recipes = theList.map((recipe) => {
-            return (<div id={recipe.title}><Recipe key={recipe.title} info={recipe} /> <button id={recipe.title} onClick={onDelete} > Delete</button></div>)
+            return (<div id={recipe.title}><Recipe key={recipe.title} info={recipe} /> <button id={recipe.title} onClick={this.handleDelete}> Delete</button></div>)
         })
 
         return ( <div>
