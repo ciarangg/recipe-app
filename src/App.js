@@ -33,8 +33,8 @@ class App extends Component {
 
   deleteRecipe = (recipeId) => {
     const {theList} = this.state;
-    let deletedRecipeArray = theList.filter(recipe => {return recipe.title !== recipeId})
-    return this.setState({theList: deletedRecipeArray});
+    let deletedMenuItemArray = theList.filter(recipe => {return recipe.id !== recipeId})
+    return this.setState({theList: deletedMenuItemArray});
 
   }
 
