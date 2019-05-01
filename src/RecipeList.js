@@ -1,5 +1,6 @@
 import React, { Component } from 'react';
 import Recipe from './Recipe';
+import EditForm  from './EditForm';
 
 
 class RecipeList extends Component {
@@ -18,11 +19,16 @@ class RecipeList extends Component {
 
 
     render() {
+        //console.log(this.props)
 
         let {theList} = this.props
 
         let recipes = theList.map((recipe) => {
-            return (<div id={recipe.title}><Recipe key={recipe.title} info={recipe} /> <button id={recipe.title} onClick={this.handleDelete}> Delete</button> <button id={recipe.title} onClick={this.handleEdit}> Edit</button></div>)
+            return (<div id={recipe.title}><Recipe key={recipe.title} info={recipe} /> 
+            <br />
+            <button id={recipe.title} onClick={this.handleDelete}> Delete</button> 
+            <br />
+            <EditForm editState={recipe} editRecipe={this.props.editRecipe} /></div>)
         })
 
         return ( <div>

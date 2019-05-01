@@ -38,8 +38,13 @@ class App extends Component {
 
   }
 
-  editRecipe = (recipeId) => {
+  editRecipe = (recipeId, editedRecipe) => {
     const {theList} = this.state;
+
+    let deleteEditRecipeArray = theList.filter(recipe => {return recipe.title !== recipeId})
+
+    deleteEditRecipeArray.unshift(editedRecipe);
+    return this.setState({theList: deleteEditRecipeArray});
 
 
   }
