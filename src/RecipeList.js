@@ -1,8 +1,16 @@
 import React, { Component } from 'react';
 import Recipe from './Recipe';
+import DeleteButton from './DeleteButton'
 
 
 class RecipeList extends Component {
+
+
+// deleteRecipe(id) {
+//     const deleteURL = APIURL + id;
+//     fetch(deleteURL, {
+//       method: "delete"
+// })
 
 
     render() {
@@ -10,7 +18,7 @@ class RecipeList extends Component {
         let {theList} = this.props
 
         let recipes = theList.map((recipe) => {
-            return (<Recipe key={recipe.title} info={recipe} /> )
+            return (<div id={recipe.title}><Recipe key={recipe.title} info={recipe} /> <DeleteButton /></div>)
         })
 
         return ( <div>
