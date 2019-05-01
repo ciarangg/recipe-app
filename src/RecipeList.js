@@ -10,13 +10,19 @@ class RecipeList extends Component {
         deleteRecipe(event.target.id)
     }
 
+    handleEdit = (event) => {
+        event.preventDefault();
+        let {editRecipe} = this.props
+        // deleteRecipe(event.target.id)
+    }
+
 
     render() {
 
         let {theList} = this.props
 
         let recipes = theList.map((recipe) => {
-            return (<div id={recipe.title}><Recipe key={recipe.title} info={recipe} /> <button id={recipe.title} onClick={this.handleDelete}> Delete</button></div>)
+            return (<div id={recipe.title}><Recipe key={recipe.title} info={recipe} /> <button id={recipe.title} onClick={this.handleDelete}> Delete</button> <button id={recipe.title} onClick={this.handleEdit}> Edit</button></div>)
         })
 
         return ( <div>

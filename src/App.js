@@ -38,6 +38,12 @@ class App extends Component {
 
   }
 
+  editRecipe = (recipeId) => {
+    const {theList} = this.state;
+
+
+  }
+
 
   render() {
 
@@ -47,7 +53,7 @@ class App extends Component {
     
     return (
       <div className="App">
-        <RecipeList key={theList.id} theList={theList} deleteRecipe={this.deleteRecipe} />
+        <RecipeList key={theList.id} theList={theList} deleteRecipe={this.deleteRecipe} editRecipe={this.editRecipe} />
         <RecipeForm postRecipe={this.postRecipe} />
       </div>
     );
