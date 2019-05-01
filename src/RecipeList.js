@@ -1,24 +1,20 @@
 import React, { Component } from 'react';
 import Recipe from './Recipe';
-import DeleteButton from './DeleteButton'
 
 
 class RecipeList extends Component {
 
 
-// deleteRecipe(id) {
-//     const deleteURL = APIURL + id;
-//     fetch(deleteURL, {
-//       method: "delete"
-// })
 
 
     render() {
 
+        let {onDelete} = this.props
+
         let {theList} = this.props
 
         let recipes = theList.map((recipe) => {
-            return (<div id={recipe.title}><Recipe key={recipe.title} info={recipe} /> <DeleteButton /></div>)
+            return (<div id={recipe.title}><Recipe key={recipe.title} info={recipe} /> <button id={recipe.title} onClick={onDelete} > Delete</button></div>)
         })
 
         return ( <div>

@@ -31,6 +31,13 @@ class App extends Component {
     return this.setState({theList});
   }
 
+  deleteRecipe = () => {
+    // let deletedRecipeArray = theList.map((recipe) => {
+    //   return (<div id={recipe.title}><Recipe key={recipe.title} info={recipe} /> <DeleteButton /></div>)
+    // })
+    console.log('jola')
+  }
+
 
   render() {
 
@@ -40,7 +47,7 @@ class App extends Component {
     
     return (
       <div className="App">
-        <RecipeList key={theList.id} theList={theList} />
+        <RecipeList key={theList.id} theList={theList} onDelete={this.deleteRecipe} />
         <RecipeForm postRecipe={this.postRecipe} />
       </div>
     );
