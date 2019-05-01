@@ -1,21 +1,9 @@
 import React, { Component } from 'react';
 import Recipe from './Recipe';
 import EditForm  from './EditForm';
-
+import DeleteForm  from './DeleteForm';
 
 class RecipeList extends Component {
-
-    handleDelete = (event) => {
-        event.preventDefault();
-        let {deleteRecipe} = this.props
-        deleteRecipe(event.target.id)
-    }
-
-    handleEdit = (event) => {
-        event.preventDefault();
-        let {editRecipe} = this.props
-        // deleteRecipe(event.target.id)
-    }
 
 
     render() {
@@ -26,7 +14,8 @@ class RecipeList extends Component {
         let recipes = theList.map((recipe) => {
             return (<div id={recipe.title}><Recipe key={recipe.title} info={recipe} /> 
             <br />
-            <button id={recipe.title} onClick={this.handleDelete}> Delete</button> 
+            {/* <button id={recipe.title} onClick={this.handleDelete}> Delete</button>  */}
+            <DeleteForm recipeTitle={recipe.title} deleteRecipe={this.props.deleteRecipe} />
             <br />
             <EditForm editState={recipe} editRecipe={this.props.editRecipe} /></div>)
         })
