@@ -19,6 +19,7 @@ class Recipe extends Component {
                             {ingredientsList}
                     </dl>
                     <p> <b> Recipe: </b> {info.instructions} </p>
+            
 
                 </div>
         );

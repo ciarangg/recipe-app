@@ -35,19 +35,18 @@ class RecipeForm extends Component {
     }
 
 
-        handleSubmit = (event) => {
-            event.preventDefault();
+    handleSubmit = (event) => {
+        event.preventDefault();
             
-            const CONSTANTRECIPE = this.state.newRecipe
-            let {postRecipe} = this.props
+        const CONSTANTRECIPE = this.state.newRecipe
+        let {postRecipe} = this.props
     
-            postRecipe(CONSTANTRECIPE)
-            this.setState({newRecipe: {... blankRecipe}})
-        }
+        postRecipe(CONSTANTRECIPE)
+        this.setState({newRecipe: {... blankRecipe}})
+    }
 
     render() {
 
-        let {newRecipe} = this.state
 
 
 
